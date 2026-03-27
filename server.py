@@ -15,6 +15,9 @@ def emotion_detector_route():
     sadness = result['sadness']
     dominant_emotion = result['dominant_emotion']
 
+    if dominant_emotion is None:
+        return "Invalid text! Please try again!"
+
     response = (
         f"For the given statement, the system response is "
         f"'anger': {anger}, 'disgust': {disgust}, 'fear': {fear}, "
